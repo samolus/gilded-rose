@@ -6,3 +6,4 @@
 Contributors :
 * ASSOULINE Samuel
 * BUNIAK Julien
+* COHEN Samuel
