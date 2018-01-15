@@ -41,4 +41,23 @@ public class GildedRoseTest {
                 .isEqualTo(1);
         solftly.assertAll();
     }
+
+    @Test
+    public void Sellin_Inf_0_and_object_non_specific() {
+        Item item = new Item("Apple", -10, 10);
+        Item[] items = new Item[] {item};
+
+        GildedRose tavern = new GildedRose(items);
+
+        tavern.updateQuality();
+
+        SoftAssertions solftly = new SoftAssertions();
+        solftly.assertThat(item.quality)
+                .as("Apple quality")
+                .isEqualTo(8);
+        solftly.assertThat(item.sellIn)
+                .as("Apple Price")
+                .isEqualTo(-11);
+        solftly.assertAll();
+    }
 }
