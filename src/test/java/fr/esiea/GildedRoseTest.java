@@ -60,4 +60,77 @@ public class GildedRoseTest {
                 .isEqualTo(-11);
         solftly.assertAll();
     }
+    @Test
+    public void Equals_Backstage_quality_add_one() {
+        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 10);
+        Item[] items = new Item[] {item};
+
+        GildedRose tavern = new GildedRose(items);
+
+        tavern.updateQuality();
+
+        SoftAssertions solftly = new SoftAssertions();
+        solftly.assertThat(item.quality)
+                .as("Backstage quality")
+                .isEqualTo(13);
+        solftly.assertThat(item.sellIn)
+                .as("Backstage Price")
+                .isEqualTo(4);
+        solftly.assertAll();
+    }
+    @Test
+    public void Sellin_inf_0_and_not_equals_to_aged_and_backstage() {
+        Item item = new Item("Apple", -11, 10);
+        Item[] items = new Item[] {item};
+
+        GildedRose tavern = new GildedRose(items);
+
+        tavern.updateQuality();
+
+        SoftAssertions solftly = new SoftAssertions();
+        solftly.assertThat(item.quality)
+                .as("Apple quality")
+                .isEqualTo(8);
+        solftly.assertThat(item.sellIn)
+                .as("Apple Price")
+                .isEqualTo(-12);
+        solftly.assertAll();
+    }
+    @Test
+    public void Sellin_inf_0_and_equals_to_aged_and_quality_inf_50() {
+        Item item = new Item("Aged Brie", -11, 10);
+        Item[] items = new Item[] {item};
+
+        GildedRose tavern = new GildedRose(items);
+
+        tavern.updateQuality();
+
+        SoftAssertions solftly = new SoftAssertions();
+        solftly.assertThat(item.quality)
+                .as("Aged quality")
+                .isEqualTo(12);
+        solftly.assertThat(item.sellIn)
+                .as("Aged Price")
+                .isEqualTo(-12);
+        solftly.assertAll();
+    }
+    @Test
+    public void Sellin_inf_0_and_equals_to_Backstage() {
+        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", -11, 10);
+        Item[] items = new Item[] {item};
+
+        GildedRose tavern = new GildedRose(items);
+
+        tavern.updateQuality();
+
+        SoftAssertions solftly = new SoftAssertions();
+        solftly.assertThat(item.quality)
+                .as("Backstage quality")
+                .isEqualTo(0);
+        solftly.assertThat(item.sellIn)
+                .as("Backstage Price")
+                .isEqualTo(-12);
+        solftly.assertAll();
+    }
+
 }
