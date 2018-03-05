@@ -70,11 +70,7 @@ class GildedRose {
                     items[i] = updateAgedBrie(items[i]);
                     break;
                 case "Backstage passes to a TAFKAL80ETC concert":
-<<<<<<< HEAD
-                    break;
-=======
                     items[i]=updateBackstagePassesToATAFKAL80ETCconcert(items[i]);
->>>>>>> refactoring with method updateBackstagePassesToATAFKAL80ETCconcert
                 case "Sulfuras, Hand of Ragnaros   ":
                     break;
                 default:
