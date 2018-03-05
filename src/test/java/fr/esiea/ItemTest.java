@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class ItemTest {
 
-    @Test
+    /*@Test
     public void non_specific_object_quality_and_price_decrease_by_one() {
         Item item = new Item("apple", 2, 10);
         Item[] items = new Item[] {item};
@@ -24,7 +24,7 @@ public class ItemTest {
                 .as("Apple Price")
                 .isEqualTo(1);
         solftly.assertAll();
-    }
+    }*/
 
     @Test
     public void testToString()

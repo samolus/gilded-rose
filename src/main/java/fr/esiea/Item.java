@@ -22,9 +22,10 @@ public class Item {
         return sellIn;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
+
 
     public void setSellIn(int sellIn) {
         this.sellIn = sellIn;
