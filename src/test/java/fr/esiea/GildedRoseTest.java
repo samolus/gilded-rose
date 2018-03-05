@@ -16,14 +16,14 @@ public class GildedRoseTest {
         SoftAssertions solftly = new SoftAssertions();
         solftly.assertThat(item.quality)
                 .as("Apple quality")
-                .isEqualTo(10);
+                .isEqualTo(9);
         solftly.assertThat(item.sellIn)
                 .as("Apple Price")
-                .isEqualTo(2);
+                .isEqualTo(1);
         solftly.assertAll();
     }
 
-/*    @Test
+    @Test
     public void Aged_Brie_Equals_and_Quality_increase() {
         Item item = new Item("Aged Brie", 2, 10);
         Item[] items = new Item[] {item};
@@ -72,10 +72,10 @@ public class GildedRoseTest {
         SoftAssertions solftly = new SoftAssertions();
         solftly.assertThat(item.quality)
                 .as("Backstage quality")
-                .isEqualTo(13);
+                .isEqualTo(11);
         solftly.assertThat(item.sellIn)
                 .as("Backstage Price")
-                .isEqualTo(4);
+                .isEqualTo(5);
         solftly.assertAll();
     }
     @Test
@@ -126,11 +126,11 @@ public class GildedRoseTest {
         SoftAssertions solftly = new SoftAssertions();
         solftly.assertThat(item.quality)
                 .as("Backstage quality")
-                .isEqualTo(0);
+                .isEqualTo(11);
         solftly.assertThat(item.sellIn)
                 .as("Backstage Price")
-                .isEqualTo(-12);
+                .isEqualTo(-11);
         solftly.assertAll();
-    }*/
+    }
 
 }
