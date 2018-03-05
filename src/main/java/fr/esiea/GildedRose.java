@@ -71,11 +71,13 @@ class GildedRose {
                     break;
                 case "Backstage passes to a TAFKAL80ETC concert":
                     items[i]=updateBackstagePassesToATAFKAL80ETCconcert(items[i]);
-                case "Sulfuras, Hand of Ragnaros   ":
+					break;
+                case "Sulfuras, Hand of Ragnaros":
                     break;
                 default:
-                    break;
-            }
+					items[i]=updateItemDefault(items[i]);	
+					break;
+				}
         }
     }
     public Item updateAgedBrie(Item item){
@@ -101,6 +103,19 @@ class GildedRose {
                 item.setQuality(item.getQuality()+1);
              }
          }
+        return item;
+    }
+	public Item updateItemDefault(Item item){
+        if (item.getQuality() > 0) {
+            item.setQuality(item.getQuality() - 1);
+        }
+        item.setSellIn(item.getSellIn() - 1);
+
+        if (item.getSellIn() < 0) {
+            if (item.getQuality() > 0) {
+                item.setQuality(item.getQuality() - 1);
+            }
+        }
         return item;
     }
 }
