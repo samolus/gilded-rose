@@ -7,16 +7,10 @@ import static org.junit.Assert.*;
 
 public class ItemTest {
 
-
     @Test
-    public void testToString()
-    {
-        Item item = new Item("apple", 2, 10);
-        Item[] items = new Item[] {item};
-        String expected = "apple, 2, 10"; // put the expected value here
-        SoftAssertions solftly = new SoftAssertions();
-        solftly.assertThat(items.toString().equals(expected));
-        solftly.assertAll();
+    public void testToString(){
+        Item item = new Item("Test", 0, 0);
+        Assertions.assertThat(item.toString()).as("Item toString methode").isEqualTo(item.name + ", " + item.sellIn + ", " + item.quality );
     }
 
 }
