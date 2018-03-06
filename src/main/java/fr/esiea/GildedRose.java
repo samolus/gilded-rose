@@ -50,7 +50,15 @@ class GildedRose {
              {
                 item.setQuality(item.getQuality()+1);
              }
+             if (item.getSellIn() < 6)
+             {
+                if (item.getQuality() < 50)
+                    {
+                        item.setQuality(item.getQuality()+1);
+                    }
+            }
          }
+
         return item;
     }
 	public Item updateItemDefault(Item item){

@@ -72,7 +72,7 @@ public class GildedRoseTest {
         SoftAssertions solftly = new SoftAssertions();
         solftly.assertThat(item.quality)
                 .as("Backstage quality")
-                .isEqualTo(11);
+                .isEqualTo(12);
         solftly.assertThat(item.sellIn)
                 .as("Backstage Price")
                 .isEqualTo(5);
@@ -126,11 +126,30 @@ public class GildedRoseTest {
         SoftAssertions solftly = new SoftAssertions();
         solftly.assertThat(item.quality)
                 .as("Backstage quality")
-                .isEqualTo(11);
+                .isEqualTo(12);
         solftly.assertThat(item.sellIn)
                 .as("Backstage Price")
                 .isEqualTo(-11);
         solftly.assertAll();
     }
 
+    @Test
+    public void Name_Equal_Sulfura()
+    {
+        Item item = new Item("Sulfuras, Hand of Ragnaros", -11, 10);
+        Item[] items = new Item[] {item};
+
+        GildedRose tavern = new GildedRose(items);
+
+        tavern.updateQuality();
+
+        SoftAssertions solftly = new SoftAssertions();
+        solftly.assertThat(item.quality)
+                .as("Backstage quality")
+                .isEqualTo(10);
+        solftly.assertThat(item.sellIn)
+                .as("Backstage Price")
+                .isEqualTo(-11);
+        solftly.assertAll();
+    }
 }
