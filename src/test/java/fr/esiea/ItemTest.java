@@ -6,13 +6,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ItemTest {
-    
+
 
     @Test
     public void testToString()
     {
         Item item = new Item("apple", 2, 10);
-        assertEquals("apple,1,10",item.toString());
+        assertEquals("apple, 2, 10",item.toString());
     }
 
 }
